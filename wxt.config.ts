@@ -4,6 +4,9 @@ import { defineConfig } from 'wxt';
 export default defineConfig({
   modules: ['@wxt-dev/module-vue', '@wxt-dev/auto-icons'],
   manifestVersion: 3,
+  zip: {
+    excludeSources: ['site/**', 'docs/**'],
+  },
   autoIcons: {
     baseIconPath: 'assets/icon.svg',
   },

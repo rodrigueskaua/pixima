@@ -12,6 +12,8 @@ node_modules
 stats.html
 stats-*.json
 .wxt
+.nuxt
+.data
 web-ext.config.ts
 
 # Editor directories and files
@@ -29,3 +31,6 @@ web-ext.config.ts
 .env
 .env.*
 !.env.example
+
+# build do site
+site/dist
