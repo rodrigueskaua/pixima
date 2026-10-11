@@ -58,6 +58,8 @@ As imagens já estão prontas em [docs/loja/](loja/), nos tamanhos exatos que a 
 
 O painel nelas é o real, ao lado de uma página de exemplo fictícia com imagens geradas, sem conteúdo de terceiros. As mesmas capturas servem para o Firefox. Se a interface mudar, as imagens precisam ser refeitas.
 
+Há também [demo-1280x800.mp4](loja/demo-1280x800.mp4), uma gravação de cerca de 16 segundos do Pixima na Wikipédia (artigo sobre a Apollo 11, com imagens de domínio público da NASA). A Chrome Web Store aceita um vídeo do YouTube na listagem, então dá para enviar esse arquivo para lá e colar o link.
+
 ## Textos prontos
 
 **Nome:** Pixima

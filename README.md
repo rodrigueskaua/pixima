@@ -14,21 +14,22 @@ Escolha o que quiser, **baixe tudo em um ZIP e converta para PNG, JPG ou WebP no
 Tudo acontece no seu navegador: sem conta, sem rastreamento e **nenhuma imagem passa por servidor**.
 
 <div align="center">
-  <img src="docs/screenshots/galeria.png" alt="Painel do Pixima com a galeria de imagens da página, no tema claro" width="280">
-  <img src="docs/screenshots/galeria-escuro.png" alt="Painel do Pixima no tema escuro" width="280">
+  <img src="docs/screenshots/apresentacao.gif" alt="Passeio pelo Pixima na Wikipédia: ordenar, selecionar três imagens, converter para WebP e baixar em ZIP" width="800">
 </div>
 
-Capturas com imagens geradas só para o exemplo.
+Capturas feitas na Wikipédia, no artigo sobre a Apollo 11, com imagens de domínio público da NASA. O texto da Wikipédia é licenciado sob [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br).
 
 <details>
-<summary>Ver mais telas</summary>
+<summary>Ver as telas em tamanho original</summary>
 
 <br>
 
 <div align="center">
-  <img src="docs/screenshots/selecao.png" alt="Imagens selecionadas e botão de baixar em ZIP" width="280">
-  <img src="docs/screenshots/filtros.png" alt="Painel de filtros por tamanho, formato, orientação e ordem" width="280">
-  <img src="docs/screenshots/exportar.png" alt="Painel de exportação com formato, qualidade e nome dos arquivos" width="280">
+  <img src="docs/screenshots/galeria.png" alt="Galeria com as imagens do artigo, no tema claro" width="260">
+  <img src="docs/screenshots/selecao.png" alt="Imagens selecionadas e botão de baixar em ZIP" width="260">
+  <img src="docs/screenshots/filtros.png" alt="Painel de filtros por tamanho, formato, orientação e ordem" width="260">
+  <img src="docs/screenshots/exportar.png" alt="Painel de exportação com formato, qualidade e nome dos arquivos" width="260">
+  <img src="docs/screenshots/galeria-escuro.png" alt="Galeria no tema escuro" width="260">
 </div>
 
 </details>
