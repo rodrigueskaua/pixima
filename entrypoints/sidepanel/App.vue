@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {
   CircleHelp,
+  Crosshair,
   Download,
   Globe,
   ImageOff,
@@ -18,6 +19,7 @@ import {
 } from '@lucide/vue';
 import { useStorage } from '@vueuse/core';
 import { computed, nextTick, reactive, ref, watch } from 'vue';
+import { toast } from 'vue-sonner';
 import { browser } from 'wxt/browser';
 import ExportSheet from '@/components/ExportSheet.vue';
 import FilterSheet from '@/components/FilterSheet.vue';
@@ -29,6 +31,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Toaster } from '@/components/ui/sonner';
 import { useImageActions } from '@/composables/useImageActions';
+import { useImagePicker } from '@/composables/useImagePicker';
 import { usePageImages } from '@/composables/usePageImages';
 import { useTheme } from '@/composables/useTheme';
 import { useTour } from '@/composables/useTour';
@@ -69,6 +72,7 @@ const FORMAT_LABELS: Record<OutputFormat, string> = {
 const SIZE_STEPS = [0, 32, 64, 100, 200, 300, 500, 800, 1200, 2000];
 const DEFAULT_SIZE_INDEX = 3;
 const SQUARE_TOLERANCE = 0.08;
+const FLASH_DURATION = 1800;
 
 const logoUrl = browser.runtime.getURL('/icons/48.png' as never);
 
@@ -92,6 +96,7 @@ const {
   generation,
   scan,
   showNow,
+  addImage,
   setDimensions,
 } = usePageImages();
 
@@ -117,6 +122,8 @@ const { progress, copyImage, copyUrl, openInTab, downloadOne, downloadMany } = u
 );
 
 const selected = ref(new Set<string>());
+const pinned = ref(new Set<string>());
+const flashUrl = ref('');
 const previewIndex = ref<number | null>(null);
 let lastToggled = -1;
 
@@ -124,10 +131,18 @@ const grouped = computed(() =>
   groupVersions.value ? groupVariants(images.value) : { items: images.value, hidden: 0 },
 );
 
+const baseItems = computed(() => {
+  const items = grouped.value.items;
+  const known = new Set(items.map((image) => image.url));
+  const extra = images.value.filter((image) => pinned.value.has(image.url) && !known.has(image.url));
+  return [...items, ...extra];
+});
+
 const usable = computed(() =>
-  grouped.value.items.filter(
+  baseItems.value.filter(
     (image) =>
-      !isTracker(image) && effectiveKind(image) !== 'icon' && image.width && image.height,
+      pinned.value.has(image.url) ||
+      (!isTracker(image) && effectiveKind(image) !== 'icon' && image.width && image.height),
   ),
 );
 
@@ -152,6 +167,7 @@ function matchesOrientation(image: ScannedImage) {
 const filtered = computed(() => {
   const threshold = SIZE_STEPS[sizeIndex.value] ?? 0;
   return usable.value.filter((image) => {
+    if (pinned.value.has(image.url)) return true;
     if (Math.max(image.width, image.height) < threshold) return false;
     if (selectedFormats.value.length && !selectedFormats.value.includes(formatOf(image))) return false;
     return matchesOrientation(image);
@@ -239,7 +255,9 @@ watch(
 
 watch(generation, () => {
   selected.value = new Set();
+  pinned.value = new Set();
   lastToggled = -1;
+  picker.cancel();
 });
 
 watch(images, () => {
@@ -251,6 +269,24 @@ watch(images, () => {
 watch([kindFilter, sizeIndex, selectedFormats, orientation, sort], () => {
   lastToggled = -1;
 });
+
+async function handlePicked(image: ScannedImage) {
+  addImage(image);
+  pinned.value = new Set(pinned.value).add(image.url);
+  selected.value = new Set(selected.value).add(image.url);
+  kindFilter.value = 'all';
+  await nextTick();
+  document
+    .querySelector(`[data-url="${CSS.escape(image.url)}"]`)
+    ?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  flashUrl.value = image.url;
+  setTimeout(() => {
+    if (flashUrl.value === image.url) flashUrl.value = '';
+  }, FLASH_DURATION);
+  toast.success('Imagem selecionada');
+}
+
+const picker = useImagePicker(page, handlePicked);
 
 function cardLabel(image: ScannedImage) {
   return guessExtension(image.url) || KIND_BADGES[image.kind];
@@ -404,6 +440,10 @@ function downloadFromSheet() {
           <LoaderCircle class="size-3.5 shrink-0 animate-spin" />
           {{ waitingPage ? 'Aguardando a página carregar…' : 'Procurando imagens…' }}
         </template>
+        <template v-else-if="status === 'ready' && picker.picking.value">
+          <Crosshair class="text-primary size-3.5 shrink-0" />
+          Clique numa imagem da página
+        </template>
         <template v-else-if="status === 'ready'">
           <span class="text-foreground font-medium tabular-nums">{{ visible.length }}</span>
           {{ visible.length === 1 ? 'imagem' : 'imagens' }}
@@ -422,6 +462,18 @@ function downloadFromSheet() {
         @click="showNow"
       >
         Mostrar agora
+      </Button>
+      <Button
+        v-if="status === 'ready'"
+        :variant="picker.picking.value ? 'default' : 'outline'"
+        size="sm"
+        data-tour="pick"
+        class="ml-auto h-7 shrink-0 gap-1.5 px-2.5 text-xs"
+        :title="picker.picking.value ? 'Cancelar a seleção na página' : 'Escolher uma imagem direto na página'"
+        @click="picker.toggle"
+      >
+        <component :is="picker.picking.value ? X : Crosshair" class="size-3.5" />
+        {{ picker.picking.value ? 'Cancelar' : 'Escolher na página' }}
       </Button>
       <Button
         v-if="status === 'ready'"
@@ -514,6 +566,8 @@ function downloadFromSheet() {
             :selecting="hasSelection"
             :layout="layout"
             :data-tour="index === 0 ? 'card' : undefined"
+            :data-url="image.url"
+            :highlight="flashUrl === image.url"
             @toggle="(range) => toggle(image, index, range)"
             @preview="previewIndex = index"
             @copy="copyImage(image)"
@@ -606,6 +660,6 @@ function downloadFromSheet() {
       @download="downloadFromPreview"
       @open="openInTab"
     />
-    <Toaster position="top-center" theme="system" rich-colors />
+    <Toaster position="bottom-center" :offset="{ bottom: 128 }" :mobile-offset="{ bottom: 128, left: 16, right: 16 }" theme="system" rich-colors />
   </div>
 </template>

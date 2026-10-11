@@ -203,6 +203,12 @@ export function usePageImages() {
     await Promise.all([measureUnknown(current), scanFrames(current, tabId)]);
   }
 
+  function addImage(image: ScannedImage) {
+    if (images.value.some((item) => item.url === image.url)) return;
+    images.value = [...images.value, image];
+    measureUnknown(run);
+  }
+
   function showNow() {
     skipWaiting = true;
   }
@@ -267,6 +273,7 @@ export function usePageImages() {
     generation,
     scan,
     showNow,
+    addImage,
     setDimensions,
   };
 }
