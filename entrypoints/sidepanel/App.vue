@@ -352,7 +352,7 @@ function downloadFromSheet() {
       </div>
 
       <div class="bg-background flex items-center gap-2 px-3 py-2.5">
-        <div data-tour="tabs" class="-mr-1 flex min-w-0 flex-1 gap-1.5 overflow-x-auto pr-1 [scrollbar-width:none]" role="tablist" aria-label="Tipo de imagem">
+        <div data-tour="tabs" class="flex min-w-0 flex-1 gap-1.5 overflow-x-auto pr-6 [mask-image:linear-gradient(to_right,#000_calc(100%-28px),transparent)] [scrollbar-width:none]" role="tablist" aria-label="Tipo de imagem">
           <button
             v-for="chip in [['all', 'Todas', filtered.length], ...kindCounts.map(([kind, count]) => [kind, KIND_LABELS[kind], count])] as [KindFilter, string, number][]"
             :key="chip[0]"

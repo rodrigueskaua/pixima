@@ -21,7 +21,7 @@ const SIZE_PARAMS = new Set([
 ]);
 
 const INTERFACE_NAME =
-  /(^|[-_/.])(logo|loader|loading|spinner|sprite|sprites|icon|icons|avatar|arrow|arrows|badge|favicon|pixel|tracking|blank|spacer|placeholder|button|btn)([-_.\d/]|$)/i;
+  /(^|[-_/.])(logo|loader|loading|spinner|sprite|sprites|icon|icons|avatar|arrow|arrows|badge|favicon|pixel|tracking|blank|spacer|placeholder|button|btn|wordmark|tagline)([-_.\d/]|$)/i;
 
 const TRACKER_PATH =
   /(gen_204|\/pixel(\.|\/|$)|beacon|\/collect(\/|$)|\/track(ing|er)?(\/|\.|$)|analytics|\/ping(\/|$)|\/impression|\/b\/ss\/)/i;
@@ -31,6 +31,8 @@ const TRACKER_HOST =
 
 const TRACKER_MAX_SIDE = 4;
 
+const MEDIA_SUBDOMAIN = /^(thumb|thumbs|upload|img|images|cdn|media|static)\./i;
+
 const QUALITY_HINT = /(original|full|large|big|xl|2048|1600|1200|hires|high)/i;
 
 export function variantKey(url: string) {
@@ -39,17 +41,19 @@ export function variantKey(url: string) {
     const parsed = new URL(url);
     const segments = parsed.pathname.split('/').filter(Boolean);
     const file = segments.pop() ?? '';
-    const folders = segments.filter((segment) => !SIZE_SEGMENT.test(segment));
-    const name = file
+    const rawName = file.replace(/^\d+px-/i, '');
+    let folders = segments.filter((segment) => !SIZE_SEGMENT.test(segment));
+    if (rawName !== file && folders[folders.length - 1] === rawName) folders = folders.slice(0, -1);
+    const name = rawName
       .replace(/\.[a-z0-9]{2,5}$/i, '')
       .replace(/[-_]\d+x\d+$/i, '')
       .replace(/@\dx$/i, '');
     const params = [...parsed.searchParams]
-      .filter(([key]) => !SIZE_PARAMS.has(key.toLowerCase()))
+      .filter(([key]) => !SIZE_PARAMS.has(key.toLowerCase()) && !/^utm_/i.test(key))
       .map(([key, value]) => `${key}=${value}`)
       .sort()
       .join('&');
-    return `${parsed.host}/${folders.join('/')}/${name}?${params}`;
+    return `${parsed.host.replace(MEDIA_SUBDOMAIN, '')}/${folders.join('/')}/${name}?${params}`;
   } catch {
     return url;
   }

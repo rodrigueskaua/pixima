@@ -156,7 +156,7 @@ const chip = (active: boolean) =>
             <h3 class="text-sm font-medium">Agrupar versões</h3>
             <p class="text-muted-foreground text-xs">
               Mostra só a maior versão de cada imagem<template v-if="group && hiddenByGroup">
-                ({{ hiddenByGroup }} ocultas)</template>.
+                ({{ hiddenByGroup }} {{ hiddenByGroup === 1 ? 'oculta' : 'ocultas' }})</template>.
             </p>
           </div>
           <Switch :model-value="group" @update:model-value="(value) => emit('update:group', value)" />
