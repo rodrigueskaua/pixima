@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pixima: todas as imagens de qualquer site num só painel</title>
+  <meta name="description" content="Extensão para Chrome, Edge, Brave e Firefox que reúne as imagens de qualquer site num só painel. Copie, converta para PNG, JPG ou WebP e baixe em ZIP. Gratuita e privada.">
+  <meta name="theme-color" content="#102a43">
+  <link rel="canonical" href="https://rodrigueskaua.github.io/pixima/">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Pixima: todas as imagens de qualquer site num só painel">
+  <meta property="og:description" content="Copie, converta para PNG, JPG ou WebP e baixe em ZIP, tudo no seu navegador.">
+  <meta property="og:url" content="https://rodrigueskaua.github.io/pixima/">
+  <meta property="og:image" content="https://rodrigueskaua.github.io/pixima/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/icon.png" alt="" width="32" height="32">Pixima</a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#recursos">Recursos</a>
+        <a href="#como-usar">Como usar</a>
+        <a href="#privacidade">Privacidade</a>
+        <a href="#perguntas">Perguntas</a>
+        <a class="cta" href="https://github.com/rodrigueskaua/pixima#instalação">Instalar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <div class="hero">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">Chrome, Edge, Brave e Firefox</span>
+          <h1>Todas as imagens de qualquer site num só painel.</h1>
+          <p class="lead">O Pixima abre um painel ao lado da página e mostra tudo o que ela tem. Escolha o que quiser, converta para PNG, JPG ou WebP e baixe tudo em um ZIP.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://github.com/rodrigueskaua/pixima#instalação">Instalar</a>
+            <a class="btn btn-ghost" href="https://github.com/rodrigueskaua/pixima">Ver no GitHub</a>
+          </div>
+          <p class="note">Gratuito e de código aberto. Em breve na Chrome Web Store e no Firefox Add-ons; por enquanto, a instalação é pelo GitHub.</p>
+        </div>
+        <div class="window">
+          <div class="window-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+          <img src="assets/apresentacao.gif" width="800" height="500" alt="O Pixima na Wikipédia: ordenar as imagens, selecionar três, converter para WebP e baixar em um ZIP">
+        </div>
+      </div>
+    </div>
+
+    <section id="recursos">
+      <div class="wrap">
+        <h2 class="section-title">Chega de salvar imagem por imagem</h2>
+        <p class="section-sub">Em vez de clicar com o botão direito em cada foto, veja tudo de uma vez, já organizado.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+            <h3>Acha tudo da página</h3>
+            <p>Fotos, fundos, SVGs, capas de vídeo e até as imagens que o site só carrega depois.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
+            <h3>Sem repetição</h3>
+            <p>Quando o site tem miniatura, tamanho médio e grande da mesma foto, o Pixima mostra só a maior.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z"/></svg></div>
+            <h3>Sem lixo</h3>
+            <p>Anúncios, rastreadores e itens de interface, como logos e ícones, ficam de fora da lista.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 5H3"/><path d="M12 19H3"/><path d="M14 3v4"/><path d="M16 17v4"/><path d="M21 12h-9"/><path d="M21 19h-5"/><path d="M21 5h-7"/><path d="M8 10v4"/><path d="M8 12H3"/></svg></div>
+            <h3>Filtros que ajudam</h3>
+            <p>Filtre por tamanho, formato e orientação e ordene como preferir. Shift seleciona um intervalo.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg></div>
+            <h3>Converte ao baixar</h3>
+            <p>PNG, JPG ou WebP, com a qualidade que você escolher. Baixe uma ou várias em um ZIP, com o nome original ou numeradas.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <h3>Privado</h3>
+            <p>Sem conta e sem servidor. A busca, a conversão e o ZIP acontecem no seu navegador.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-usar">
+      <div class="wrap">
+        <h2 class="section-title">Como usar</h2>
+        <p class="section-sub">São três passos, e o Pixima mostra um tour rápido na primeira vez.</p>
+        <ol class="steps">
+          <li><strong>Abra o Pixima</strong><span>Entre em qualquer site e clique no ícone do Pixima na barra do navegador.</span></li>
+          <li><strong>Escolha as imagens</strong><span>Toque nas que quiser. Se não marcar nenhuma, o Pixima pega todas.</span></li>
+          <li><strong>Baixe</strong><span>Clique em Baixar. Para mudar o formato ou o nome dos arquivos, use a engrenagem ao lado.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="telas">
+      <div class="wrap">
+        <h2 class="section-title">Como ele é por dentro</h2>
+        <p class="section-sub">Tema claro, escuro ou automático, seguindo o seu sistema.</p>
+        <div class="shots">
+          <figure><img src="assets/galeria.png" width="800" height="1600" loading="lazy" alt="Galeria com as imagens do artigo, no tema claro"><figcaption>Galeria</figcaption></figure>
+          <figure><img src="assets/filtros.png" width="800" height="1600" loading="lazy" alt="Painel de filtros por tamanho, formato, orientação e ordem"><figcaption>Filtros</figcaption></figure>
+          <figure><img src="assets/exportar.png" width="800" height="1600" loading="lazy" alt="Painel de exportação com formato, qualidade e nome dos arquivos"><figcaption>Exportar</figcaption></figure>
+          <figure><img src="assets/galeria-escuro.png" width="800" height="1600" loading="lazy" alt="Galeria no tema escuro"><figcaption>Tema escuro</figcaption></figure>
+        </div>
+        <p class="credit">Capturas feitas na Wikipédia, no artigo sobre a Apollo 11, com imagens de domínio público da NASA. O texto da Wikipédia é licenciado sob <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br">CC BY-SA 4.0</a>.</p>
+      </div>
+    </section>
+
+    <section id="privacidade">
+      <div class="wrap">
+        <div class="privacy">
+          <div>
+            <h2>Nada sai do seu navegador</h2>
+            <p>O Pixima não tem servidor nem conta. Ele só lê a página quando você abre o painel, e tudo o que faz com as imagens acontece no seu computador.</p>
+            <a href="privacidade.html">Ler a política de privacidade</a>
+          </div>
+          <ul>
+            <li>Sem conta e sem cadastro</li>
+            <li>Sem rastreadores, anúncios ou análise de uso</li>
+            <li>Nenhuma imagem é enviada para servidores</li>
+            <li>Preferências salvas só no seu navegador</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="perguntas">
+      <div class="wrap">
+        <h2 class="section-title">Perguntas frequentes</h2>
+        <div class="faq">
+          <details>
+            <summary>Em quais navegadores funciona?</summary>
+            <p>Nos baseados no Chromium, como Chrome, Edge e Brave, onde ele abre como painel lateral, e no Firefox, onde abre como barra lateral.</p>
+          </details>
+          <details>
+            <summary>É gratuito?</summary>
+            <p>Sim. O Pixima é gratuito e de código aberto, com licença MIT.</p>
+          </details>
+          <details>
+            <summary>As minhas imagens passam por algum servidor?</summary>
+            <p>Não. A busca, a conversão e a criação do ZIP acontecem no seu navegador. O Pixima não tem servidor, conta nem rastreamento.</p>
+          </details>
+          <details>
+            <summary>Por que ele pede acesso a todos os sites?</summary>
+            <p>Porque você pode abrir o Pixima em qualquer site, e ele precisa ler as imagens daquela página e baixar arquivos que ficam em outros endereços, como servidores de imagens. Ele só olha a página quando o painel está aberto.</p>
+          </details>
+          <details>
+            <summary>Ele baixa imagens de sites que exigem login?</summary>
+            <p>O Pixima baixa o que o seu navegador consegue acessar, e nesse caso usa a sua sessão no site. Respeite os direitos autorais e os termos de cada site.</p>
+          </details>
+          <details>
+            <summary>Como instalo?</summary>
+            <p>Ele ainda não está nas lojas. Por enquanto, a instalação é pelo GitHub, com o passo a passo no <a href="https://github.com/rodrigueskaua/pixima#instalação">README</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>Pixima, por Kauã Rodrigues. Licença MIT.</span>
+      <span><a href="https://github.com/rodrigueskaua/pixima">GitHub</a> · <a href="https://github.com/rodrigueskaua/pixima/issues">Suporte</a> · <a href="privacidade.html">Privacidade</a></span>
+    </div>
+  </footer>
+</body>
+</html>
