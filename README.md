@@ -33,17 +33,24 @@ Capturas com imagens geradas só para o exemplo.
 
 ## Features
 
-- Painel lateral no Chrome, Edge e Brave, e barra lateral no Firefox
-- Encontra `<img>`, `srcset`, fundos CSS, SVG inline, canvas, capas de vídeo e imagens de compartilhamento (`og:`), inclusive em iframes e shadow DOM
-- Agrupa as versões da mesma imagem (miniatura, média e grande) e mostra só a maior
-- Esconde rastreadores, anúncios e elementos de interface (logos, ícones e sprites)
-- Filtros por tipo, tamanho mínimo, formato, orientação e ordem
-- Seleção por clique, intervalo com Shift e pré-visualização com navegação pelo teclado
-- Copiar a imagem ou o endereço, baixar uma ou várias em ZIP
-- Converter para PNG, JPG ou WebP com controle de qualidade, com nome original ou numerado
+- Veja todas as imagens da página num painel ao lado, sem sair do site
+- Acha também as que ficam escondidas: fundos, ícones em SVG, capas de vídeo e imagens que o site carrega depois
+- Mostra só a melhor versão de cada imagem, sem repetir miniatura e tamanho médio
+- Deixa de fora anúncios, rastreadores e itens de interface, como logos e ícones
+- Filtre por tipo, tamanho, formato e orientação, e ordene como preferir
+- Selecione várias de uma vez (Shift para um intervalo) e amplie para conferir antes de baixar
+- Copie a imagem ou o link com um clique
+- Baixe uma imagem ou várias de uma vez em um ZIP
+- Converta para PNG, JPG ou WebP ao baixar, escolhendo a qualidade e se os arquivos mantêm o nome original ou são numerados
 - Tema claro, escuro ou automático
-- Tour rápido no primeiro uso
-- 100% local, nenhum dado sai do navegador
+- Um tour rápido mostra o básico no primeiro uso
+- Privado: tudo acontece no seu navegador, sem conta, sem rastreamento e sem enviar nada para servidores
+
+## Como usar
+
+1. Abra qualquer site e clique no ícone do Pixima na barra do navegador
+2. Toque nas imagens que quiser, ou deixe nenhuma marcada para pegar todas
+3. Clique em **Baixar**. Para mudar o formato ou o nome dos arquivos, use a engrenagem ao lado
 
 ## Instalação
 
