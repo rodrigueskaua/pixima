@@ -1,79 +1,80 @@
-import type { Component } from 'vue';
-import { Download, Filter, Layers, Search, ShieldCheck, SlidersHorizontal } from '@lucide/vue';
+import { siBrave, siFirefox, siGooglechrome } from 'simple-icons';
 
 export const links = {
   repo: 'https://github.com/rodrigueskaua/pixima',
   install: 'https://github.com/rodrigueskaua/pixima#instalação',
   issues: 'https://github.com/rodrigueskaua/pixima/issues',
   license: 'https://github.com/rodrigueskaua/pixima/blob/main/LICENSE',
-  creativeCommons: 'https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br',
 };
 
-export interface Feature {
+export const browsers = [
+  { name: 'Chrome', path: siGooglechrome.path },
+  { name: 'Firefox', path: siFirefox.path },
+  { name: 'Brave', path: siBrave.path },
+];
+
+export interface Showcase {
+  id: string;
   title: string;
   text: string;
-  icon: Component;
+  points: string[];
+  image: 'ver-tudo' | 'filtrar' | 'converter';
   wide?: boolean;
-  full?: boolean;
+  alt: string;
 }
 
-export const features: Feature[] = [
+export const showcase: Showcase[] = [
   {
-    title: 'Acha tudo da página',
-    text: 'Fotos, fundos, SVGs, capas de vídeo e até as imagens que o site só carrega depois. Tudo numa lista só, sem você caçar no código.',
-    icon: Search,
+    id: 'recursos',
+    title: 'Tudo o que a página tem, numa lista só',
+    text: 'Você abre o painel e o Pixima procura as imagens da página: as que aparecem e as que o site só carrega depois.',
+    points: [
+      'Fotos, fundos de CSS, SVGs e capas de vídeo',
+      'Quando a mesma foto aparece em miniatura, tamanho médio e grande, fica só a maior',
+      'Anúncios, rastreadores e itens do próprio site, como logos e ícones, ficam de fora',
+    ],
+    image: 'ver-tudo',
     wide: true,
+    alt: 'Painel do Pixima ao lado do artigo da Wikipédia sobre a Apollo 11, listando as imagens da página',
   },
   {
-    title: 'Sem repetição',
-    text: 'Quando o site tem miniatura, tamanho médio e grande da mesma foto, o Pixima mostra só a maior.',
-    icon: Layers,
+    id: 'filtros',
+    title: 'Filtre antes de baixar',
+    text: 'Páginas grandes têm muita coisa. Reduza a lista até sobrar só o que você quer.',
+    points: [
+      'Tamanho mínimo, formato (JPG, PNG, SVG…) e orientação',
+      'Ordem da página, por tamanho ou por nome',
+      'Um clique seleciona, Shift pega um intervalo e o duplo clique abre a imagem em tamanho maior',
+    ],
+    image: 'filtrar',
+    alt: 'Painel de filtros do Pixima aberto sobre a lista de imagens',
   },
   {
-    title: 'Sem lixo',
-    text: 'Anúncios, rastreadores e itens de interface, como logos e ícones, ficam de fora da lista.',
-    icon: Filter,
-  },
-  {
-    title: 'Filtros que ajudam',
-    text: 'Filtre por tamanho, formato e orientação e ordene como preferir. Shift seleciona um intervalo.',
-    icon: SlidersHorizontal,
-  },
-  {
-    title: 'Converte ao baixar',
-    text: 'PNG, JPG ou WebP, com a qualidade que você escolher. Baixe uma ou várias em um ZIP, com o nome original ou numeradas.',
-    icon: Download,
-  },
-  {
-    title: 'Privado de verdade',
-    text: 'Sem conta e sem servidor. A busca, a conversão e o ZIP acontecem no seu navegador.',
-    icon: ShieldCheck,
-    full: true,
+    id: 'converter',
+    title: 'Converta na hora de baixar',
+    text: 'Não precisa abrir outro programa para trocar o formato.',
+    points: [
+      'PNG, JPG ou WebP, com a qualidade que você escolher',
+      'Mais de uma imagem sai junta num ZIP',
+      'Nome original ou numerado, como pixima-001, pixima-002…',
+    ],
+    image: 'converter',
+    alt: 'Painel de exportação do Pixima com as opções de formato, qualidade e nome dos arquivos',
   },
 ];
 
-export const steps = [
-  {
-    title: 'Abra o Pixima',
-    text: 'Entre em qualquer site e clique no ícone do Pixima na barra do navegador.',
-  },
-  {
-    title: 'Escolha as imagens',
-    text: 'Toque nas que quiser. Se não marcar nenhuma, o Pixima pega todas.',
-  },
-  {
-    title: 'Baixe',
-    text: 'Clique em Baixar. Para mudar o formato ou o nome dos arquivos, use a engrenagem ao lado.',
-  },
+export const extras = [
+  'Copiar a imagem ou o endereço dela com um clique',
+  'Tema claro, escuro ou automático, seguindo o seu sistema',
+  'Um tour rápido na primeira vez que você abre o painel',
+  'Funciona em abas diferentes: o painel acompanha a página que você está vendo',
 ];
-
-export const trust = ['Gratuito', 'Código aberto (MIT)', 'Sem conta', 'Sem rastreamento'];
 
 export const faq = [
   {
     question: 'Em quais navegadores funciona?',
     answer:
-      'Nos baseados no Chromium, como Chrome, Edge e Brave, onde ele abre como painel lateral, e no Firefox, onde abre como barra lateral.',
+      'No Chrome, no Edge e no Brave, onde abre como painel lateral, e no Firefox, onde abre como barra lateral.',
   },
   {
     question: 'É gratuito?',
@@ -92,11 +93,6 @@ export const faq = [
   {
     question: 'Ele baixa imagens de sites que exigem login?',
     answer:
-      'O Pixima baixa o que o seu navegador consegue acessar, e nesse caso usa a sua sessão no site. Respeite os direitos autorais e os termos de cada site.',
-  },
-  {
-    question: 'Como instalo?',
-    answer:
-      'Ele ainda não está nas lojas. Por enquanto, a instalação é pelo GitHub, com o passo a passo no README.',
+      'Baixa o que o seu navegador consegue acessar, e nesse caso usa a sua sessão no site. Respeite os direitos autorais e os termos de cada site.',
   },
 ];

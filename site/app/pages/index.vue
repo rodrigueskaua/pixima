@@ -2,9 +2,9 @@
 const { public: site } = useRuntimeConfig();
 const base = useRuntimeConfig().app.baseURL;
 
-const title = 'Pixima: todas as imagens de qualquer site num só painel';
+const title = 'Pixima: baixe as imagens de qualquer site sem clicar em uma por uma';
 const description =
-  'Extensão para Chrome, Edge, Brave e Firefox que reúne as imagens de qualquer site num só painel. Copie, converta para PNG, JPG ou WebP e baixe em ZIP. Gratuita e privada.';
+  'Extensão para Chrome, Edge, Brave e Firefox que lista as imagens de qualquer site num painel ao lado da página. Selecione, converta para PNG, JPG ou WebP e baixe em ZIP. Gratuita e privada.';
 
 useSeoMeta({
   title,
@@ -30,11 +30,10 @@ useHead({
 <template>
   <div>
     <HeroSection />
-    <FeaturesSection />
-    <StepsSection />
-    <ScreensSection />
-    <PrivacyBanner />
+    <ShowcaseSection />
+    <ExtrasSection />
+    <PrivacySection />
     <FaqSection />
-    <CtaSection />
+    <InstallSection />
   </div>
 </template>

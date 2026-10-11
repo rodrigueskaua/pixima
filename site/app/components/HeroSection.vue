@@ -1,76 +1,63 @@
 <script setup lang="ts">
-import { Check } from '@lucide/vue';
-import demo from '@docs/apresentacao.gif';
-import { links, trust } from '~/data/content';
+import hero from '~/assets/img/hero.webp';
+import heroPainel from '~/assets/img/hero-painel.webp';
+import { browsers, links } from '~/data/content';
 </script>
 
 <template>
-  <section class="relative overflow-hidden">
-    <div
-      class="pointer-events-none absolute inset-x-0 -top-40 h-[560px] bg-[radial-gradient(60%_60%_at_50%_0%,var(--glow),transparent)]"
-      aria-hidden="true"
-    />
-    <div
-      class="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-5 pt-16 pb-20 lg:grid-cols-[1fr_1.1fr] lg:pt-24"
-    >
-      <div class="rise">
-        <span class="bg-accent text-accent-foreground mb-5 inline-block rounded-full px-3.5 py-1.5 text-[13px] font-semibold">
-          Chrome, Edge, Brave e Firefox
-        </span>
-        <h1 class="text-4xl leading-[1.05] font-extrabold tracking-tight sm:text-5xl lg:text-[56px]">
-          Todas as imagens de qualquer site
-          <span class="from-primary bg-gradient-to-r to-sky-400 bg-clip-text text-transparent">num só painel.</span>
-        </h1>
-        <p class="text-muted-foreground mt-5 max-w-xl text-lg sm:text-xl">
-          O Pixima abre um painel ao lado da página e mostra tudo o que ela tem. Escolha o que quiser, converta para
-          PNG, JPG ou WebP e baixe tudo em um ZIP.
-        </p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a
-            :href="links.install"
-            class="bg-primary text-primary-foreground rounded-xl px-6 py-3.5 text-[15px] font-semibold shadow-lg shadow-[var(--glow)] transition hover:brightness-110"
-          >
-            Instalar
-          </a>
-          <a
-            :href="links.repo"
-            class="border-border bg-card rounded-xl border px-6 py-3.5 text-[15px] font-semibold transition hover:bg-muted"
-          >
-            Ver no GitHub
-          </a>
-        </div>
-        <ul class="text-muted-foreground mt-7 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-          <li v-for="item in trust" :key="item" class="flex items-center gap-1.5">
-            <Check class="text-primary size-4" stroke-width="3" />
-            {{ item }}
-          </li>
-        </ul>
-        <p class="text-muted-foreground mt-4 text-sm">
-          Em breve na Chrome Web Store e no Firefox Add-ons. Por enquanto, a instalação é pelo GitHub.
-        </p>
-      </div>
+  <section class="mx-auto w-full max-w-6xl px-5 pt-16 pb-20 text-center sm:pt-24">
+    <h1 class="mx-auto max-w-3xl text-4xl leading-[1.1] font-semibold tracking-tight sm:text-5xl">
+      Baixe as imagens de qualquer site sem clicar em uma por uma
+    </h1>
+    <p class="text-muted-foreground mx-auto mt-6 max-w-2xl text-lg leading-relaxed sm:text-xl">
+      O Pixima abre um painel ao lado da página com todas as imagens dela. Você marca as que quer, escolhe o formato
+      (PNG, JPG ou WebP) e baixa. Se forem várias, saem juntas num ZIP.
+    </p>
 
-      <div class="rise [animation-delay:120ms]">
-        <div class="border-border bg-card overflow-hidden rounded-2xl border shadow-[var(--shadow)]">
-          <div class="bg-header flex items-center gap-3 px-4 py-3" aria-hidden="true">
-            <span class="flex gap-1.5">
-              <span class="size-2.5 rounded-full bg-white/25" />
-              <span class="size-2.5 rounded-full bg-white/25" />
-              <span class="size-2.5 rounded-full bg-white/25" />
-            </span>
-            <span class="text-header-foreground/70 flex-1 rounded-md bg-white/10 px-3 py-1 text-xs">
-              pt.wikipedia.org/wiki/Apollo_11
-            </span>
-          </div>
-          <img
-            :src="demo"
-            width="800"
-            height="500"
-            alt="O Pixima na Wikipédia: ordenar as imagens, selecionar três, converter para WebP e baixar em um ZIP"
-            class="h-auto w-full"
-          >
-        </div>
-      </div>
+    <div class="mt-9 flex flex-wrap justify-center gap-3">
+      <a
+        :href="links.install"
+        class="bg-primary text-primary-foreground rounded-md px-5 py-3 text-[15px] font-medium transition hover:brightness-110"
+      >
+        Instalar
+      </a>
+      <a
+        :href="links.repo"
+        class="border-border hover:bg-muted rounded-md border px-5 py-3 text-[15px] font-medium transition-colors"
+      >
+        Ver o código
+      </a>
+    </div>
+
+    <p class="text-muted-foreground mt-5 text-sm">
+      Gratuito, de código aberto e sem conta. Ainda não está nas lojas: a instalação é pelo GitHub.
+    </p>
+
+    <ul class="text-muted-foreground mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
+      <li class="text-muted-foreground/80">Funciona no</li>
+      <li v-for="browser in browsers" :key="browser.name" class="flex items-center gap-2">
+        <BrowserLogo :path="browser.path" />
+        {{ browser.name }}
+      </li>
+      <li class="text-muted-foreground/80">e no Edge</li>
+    </ul>
+
+    <div class="border-border mx-auto mt-14 max-w-5xl overflow-hidden rounded-xl border shadow-[var(--shadow)] sm:max-w-5xl max-sm:max-w-[420px]">
+      <img
+        :src="hero"
+        width="1920"
+        height="1200"
+        alt="O Pixima aberto ao lado do artigo da Wikipédia sobre a Apollo 11, com três imagens selecionadas para baixar"
+        class="hidden h-auto w-full sm:block"
+      >
+      <img
+        :src="heroPainel"
+        width="600"
+        height="1200"
+        alt="O Pixima com três imagens selecionadas para baixar"
+        loading="lazy"
+        class="mx-auto h-auto w-full max-w-[420px] sm:hidden"
+      >
     </div>
   </section>
 </template>

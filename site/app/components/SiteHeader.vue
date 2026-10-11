@@ -13,35 +13,38 @@ const THEMES = {
 
 const navigation = [
   { label: 'Recursos', to: '/#recursos' },
-  { label: 'Como usar', to: '/#como-usar' },
   { label: 'Privacidade', to: '/#privacidade' },
   { label: 'Perguntas', to: '/#perguntas' },
+  { label: 'Instalar', to: '/#instalar' },
 ];
 </script>
 
 <template>
-  <header class="bg-header text-header-foreground sticky top-0 z-30 shadow-md">
-    <div class="mx-auto flex h-16 w-full max-w-6xl items-center gap-6 px-5">
-      <NuxtLink to="/" class="flex items-center gap-2.5 text-lg font-bold tracking-tight">
-        <img :src="`${base}icon.png`" alt="" width="32" height="32" class="size-8 rounded-lg">
+  <header class="border-border bg-background/85 sticky top-0 z-30 border-b backdrop-blur">
+    <div class="mx-auto flex h-14 w-full max-w-6xl items-center gap-8 px-5">
+      <NuxtLink to="/" class="flex items-center gap-2.5 font-semibold tracking-tight">
+        <img :src="`${base}icon.png`" alt="" width="28" height="28" class="size-7 rounded-md">
         Pixima
       </NuxtLink>
 
-      <nav class="ml-auto hidden items-center gap-6 md:flex" aria-label="Principal">
+      <nav class="hidden items-center gap-6 md:flex" aria-label="Principal">
         <NuxtLink
           v-for="item in navigation"
           :key="item.to"
           :to="item.to"
-          class="text-sm font-medium opacity-80 transition-opacity hover:opacity-100"
+          class="text-muted-foreground hover:text-foreground text-sm transition-colors"
         >
           {{ item.label }}
         </NuxtLink>
       </nav>
 
-      <div class="ml-auto flex items-center gap-2 md:ml-0">
+      <div class="ml-auto flex items-center gap-1">
+        <a :href="links.repo" class="text-muted-foreground hover:text-foreground hidden px-3 py-2 text-sm sm:block">
+          GitHub
+        </a>
         <button
           type="button"
-          class="grid size-9 place-items-center rounded-lg transition-colors hover:bg-white/10"
+          class="text-muted-foreground hover:bg-muted hover:text-foreground grid size-9 place-items-center rounded-md transition-colors"
           :title="THEMES[mode].label"
           :aria-label="THEMES[mode].label"
           @click="cycle"
@@ -53,12 +56,6 @@ const navigation = [
             </template>
           </ClientOnly>
         </button>
-        <a
-          :href="links.install"
-          class="bg-sun text-sun-foreground rounded-lg px-3.5 py-2 text-sm font-semibold transition hover:brightness-105"
-        >
-          Instalar
-        </a>
       </div>
     </div>
   </header>
