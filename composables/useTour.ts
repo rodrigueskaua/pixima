@@ -21,6 +21,15 @@ const STEPS = [
     },
   },
   {
+    element: '[data-tour="pick"]',
+    popover: {
+      title: 'Escolha direto na página',
+      description:
+        'Toque aqui e clique em qualquer imagem do site. Ela entra na lista já selecionada, mesmo que esteja escondida pelos filtros.',
+      side: 'bottom' as const,
+    },
+  },
+  {
     element: '[data-tour="filters"]',
     popover: {
       title: 'Refine os resultados',

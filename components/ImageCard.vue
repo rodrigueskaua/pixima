@@ -14,6 +14,7 @@ const props = defineProps<{
   selected: boolean;
   selecting: boolean;
   layout: 'grid' | 'list';
+  highlight?: boolean;
 }>();
 
 const emit = defineEmits<{
@@ -58,6 +59,7 @@ function onToggle(event: MouseEvent) {
         'group bg-card relative overflow-hidden rounded-lg border transition-[box-shadow,border-color] [content-visibility:auto]',
         'hover:border-primary/40 hover:shadow-md motion-reduce:transition-none',
         selected && 'border-primary ring-primary ring-2',
+        highlight && 'ring-sun! ring-4 ring-offset-2 ring-offset-background',
         layout === 'grid'
           ? '[contain-intrinsic-size:auto_150px] aspect-square'
           : '[contain-intrinsic-size:auto_60px] flex items-center gap-2.5 p-1.5',
