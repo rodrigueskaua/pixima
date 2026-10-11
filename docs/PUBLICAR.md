@@ -20,7 +20,7 @@ Os pontos marcados com **(confirme na tela)** são regras que mudam com o tempo 
 
 - [ ] Versão atualizada em `package.json` (o WXT usa esse número no manifesto e no nome dos pacotes)
 - [ ] Testar o build em um perfil limpo do Chrome e do Firefox
-- [ ] Imagens da loja prontas (tabela abaixo)
+- [x] Imagens da loja prontas (em `docs/loja/`)
 - [ ] Política de privacidade publicada em uma URL, por exemplo a de [docs/politica-de-privacidade.md](politica-de-privacidade.md) no GitHub
 - [ ] Conferir se o nome "Pixima" está livre nas duas lojas e no INPI (registro de marca)
 
@@ -48,7 +48,15 @@ Os arquivos ficam em `.output/`:
 | Imagem promocional pequena | 440 x 280, **obrigatória** | Não tem |
 | Imagem de destaque (marquee) | 1400 x 560, opcional. Só é considerado para destaque quem enviar | Não tem |
 
-As capturas de tela em `docs/screenshots/` têm o tamanho do painel (400 x 780). Para a Chrome Web Store é preciso montar capturas de 1280 x 800, por exemplo com o painel ao lado de uma página de exemplo. Use imagens suas ou geradas, nunca de sites de terceiros.
+As imagens já estão prontas em [docs/loja/](loja/), nos tamanhos exatos que a Chrome Web Store pede:
+
+| Arquivo | Tamanho | Uso |
+|---|---|---|
+| `chrome-1-galeria.png` a `chrome-5-tema-escuro.png` | 1280 x 800 | Capturas de tela (5 no total) |
+| `promo-pequena-440x280.png` | 440 x 280 | Imagem promocional pequena |
+| `marquee-1400x560.png` | 1400 x 560 | Imagem de destaque (opcional) |
+
+O painel nelas é o real, ao lado de uma página de exemplo fictícia com imagens geradas, sem conteúdo de terceiros. As mesmas capturas servem para o Firefox. Se a interface mudar, as imagens precisam ser refeitas.
 
 ## Textos prontos
 
