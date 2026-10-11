@@ -152,7 +152,3 @@ npm run zip:firefox
 ```
 
 Os builds ficam em `.output/chrome-mv3` e `.output/firefox-mv3`, e os `.zip` para as lojas em `.output/`.
-
-### Publicar nas lojas
-
-O passo a passo para a Chrome Web Store e o Firefox Add-ons está em [docs/PUBLICAR.md](docs/PUBLICAR.md), e a [política de privacidade](docs/politica-de-privacidade.md) fica em `docs/`.
