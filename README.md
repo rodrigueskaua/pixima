@@ -5,11 +5,13 @@
 [![License](https://img.shields.io/github/license/rodrigueskaua/pixima)](LICENSE)
 [![Navegadores](https://img.shields.io/badge/navegadores-Chrome%20%7C%20Edge%20%7C%20Brave%20%7C%20Firefox-lightgrey)](#instalação)
 
-**Extensão de navegador que reúne as imagens de qualquer página para copiar, baixar e converter.**
+**Todas as imagens de qualquer site num só painel. Copie, converta e baixe em segundos.**
 
-O Pixima abre um painel lateral com todas as imagens da página que você está vendo. Basta selecionar o que quiser e **copiar, baixar uma a uma ou em ZIP e converter para PNG, JPG ou WebP**, com filtros por tipo, tamanho, formato e orientação.
+Chega de clicar com o botão direito, imagem por imagem. O Pixima abre um painel ao lado do site e mostra **tudo o que a página tem: fotos, fundos, SVGs e até o que só carrega depois**, já sem repetições, anúncios e rastreadores.
 
-Tudo roda no próprio navegador: **nenhuma imagem passa por servidor**.
+Escolha o que quiser, **baixe tudo em um ZIP e converta para PNG, JPG ou WebP no mesmo clique**.
+
+Tudo acontece no seu navegador: sem conta, sem rastreamento e **nenhuma imagem passa por servidor**.
 
 <div align="center">
   <img src="docs/screenshots/galeria.png" alt="Painel do Pixima com a galeria de imagens da página, no tema claro" width="280">
@@ -34,7 +36,7 @@ Capturas com imagens geradas só para o exemplo.
 ## Features
 
 - Veja todas as imagens da página num painel ao lado, sem sair do site
-- Acha também as que ficam escondidas: fundos, ícones em SVG, capas de vídeo e imagens que o site carrega depois
+- Acha também as que ficam escondidas: fundos, SVGs, capas de vídeo e imagens que o site carrega depois
 - Mostra só a melhor versão de cada imagem, sem repetir miniatura e tamanho médio
 - Deixa de fora anúncios, rastreadores e itens de interface, como logos e ícones
 - Filtre por tipo, tamanho, formato e orientação, e ordene como preferir

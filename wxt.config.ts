@@ -12,7 +12,7 @@ export default defineConfig({
   }),
   manifest: ({ browser }) => ({
     name: 'Pixima',
-    description: 'Veja as imagens de qualquer página: copie, baixe e converta de formato.',
+    description: 'Todas as imagens de qualquer site num só painel. Copie, converta e baixe em ZIP em segundos, 100% privado.',
     permissions: ['scripting', 'downloads', 'activeTab'],
     host_permissions: ['<all_urls>'],
     action: {
