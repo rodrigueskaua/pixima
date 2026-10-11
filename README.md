@@ -4,6 +4,7 @@
 
 [![License](https://img.shields.io/github/license/rodrigueskaua/pixima)](LICENSE)
 [![Navegadores](https://img.shields.io/badge/navegadores-Chrome%20%7C%20Edge%20%7C%20Brave%20%7C%20Firefox-lightgrey)](#instalação)
+[![Site](https://img.shields.io/badge/site-rodrigueskaua.github.io%2Fpixima-0e7490)](https://rodrigueskaua.github.io/pixima/)
 
 **Todas as imagens de qualquer site num só painel. Copie, converta e baixe em segundos.**
 
@@ -152,3 +153,16 @@ npm run zip:firefox
 ```
 
 Os builds ficam em `.output/chrome-mv3` e `.output/firefox-mv3`, e os `.zip` para as lojas em `.output/`.
+
+### Site
+
+O [site do Pixima](https://rodrigueskaua.github.io/pixima/) fica na pasta `site/`, feito com Nuxt e Tailwind, e é publicado no GitHub Pages.
+
+```sh
+cd site
+npm install
+npm run dev
+npm run deploy
+```
+
+O `npm run deploy` gera o site estático e envia o resultado para a branch `gh-pages`.
