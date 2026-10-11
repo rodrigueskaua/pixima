@@ -43,6 +43,7 @@ Capturas feitas na Wikipédia, no artigo sobre a Apollo 11, com imagens de domí
 - Deixa de fora anúncios, rastreadores e itens de interface, como logos e ícones
 - Filtre por tipo, tamanho, formato e orientação, e ordene como preferir
 - Selecione várias de uma vez (Shift para um intervalo) e amplie para conferir antes de baixar
+- Escolha uma imagem direto na página: toque em "Escolher na página", passe o mouse e clique nela
 - Copie a imagem ou o link com um clique
 - Baixe uma imagem ou várias de uma vez em um ZIP
 - Converta para PNG, JPG ou WebP ao baixar, escolhendo a qualidade e se os arquivos mantêm o nome original ou são numerados
@@ -113,7 +114,6 @@ Em andamento:
 Próximos:
 
 - [ ] Menu de botão direito na imagem
-- [ ] Modo "inspecionar" para clicar numa imagem direto na página
 - [ ] Redimensionar ao exportar
 - [ ] Vídeos e áudios
 - [ ] Testes automatizados
