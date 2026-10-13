@@ -5,6 +5,7 @@
 [![License](https://img.shields.io/github/license/rodrigueskaua/pixima)](LICENSE)
 [![Navegadores](https://img.shields.io/badge/navegadores-Chrome%20%7C%20Edge%20%7C%20Brave%20%7C%20Firefox-lightgrey)](#instalação)
 [![Site](https://img.shields.io/badge/site-rodrigueskaua.github.io%2Fpixima-0e7490)](https://rodrigueskaua.github.io/pixima/)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-instalar-0e7490?logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/pixima/omdhkbejmhcaoofkpodmfhnajjafjpaf)
 
 **Todas as imagens de qualquer site num só painel. Copie, converta e baixe em segundos.**
 
@@ -59,7 +60,13 @@ Capturas feitas na Wikipédia, no artigo sobre a Apollo 11, com imagens de domí
 
 ## Instalação
 
-O Pixima ainda não está nas lojas. Para usar, gere o build e carregue no navegador:
+### Chrome, Edge e Brave
+
+Instale pela [Chrome Web Store](https://chromewebstore.google.com/detail/pixima/omdhkbejmhcaoofkpodmfhnajjafjpaf) e clique em **Adicionar**. O Edge e o Brave também instalam extensões dessa loja.
+
+### Firefox e instalação manual
+
+O Pixima ainda não está no Firefox Add-ons. Para usar no Firefox, ou se preferir rodar o código direto, gere o build e carregue no navegador:
 
 ```sh
 git clone https://github.com/rodrigueskaua/pixima.git
@@ -109,7 +116,7 @@ O navegador não permite extensões em páginas internas, na loja de extensões 
 
 Em andamento:
 
-- [ ] Publicar na Chrome Web Store e no Firefox Add-ons
+- [ ] Publicar no Firefox Add-ons
 
 Próximos:
 

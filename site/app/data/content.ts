@@ -2,7 +2,9 @@ import { siBrave, siFirefox, siGooglechrome } from 'simple-icons';
 
 export const links = {
   repo: 'https://github.com/rodrigueskaua/pixima',
-  install: 'https://github.com/rodrigueskaua/pixima#instalação',
+  chromeStore: 'https://chromewebstore.google.com/detail/pixima/omdhkbejmhcaoofkpodmfhnajjafjpaf',
+  install: 'https://chromewebstore.google.com/detail/pixima/omdhkbejmhcaoofkpodmfhnajjafjpaf',
+  installManual: 'https://github.com/rodrigueskaua/pixima#instalação',
   issues: 'https://github.com/rodrigueskaua/pixima/issues',
   license: 'https://github.com/rodrigueskaua/pixima/blob/main/LICENSE',
 };
