@@ -19,7 +19,7 @@ import { browsers, links } from '~/data/content';
         :href="links.install"
         class="bg-primary text-primary-foreground rounded-md px-5 py-3 text-[15px] font-medium transition hover:brightness-110"
       >
-        Instalar
+        Instalar no Chrome
       </a>
       <a
         :href="links.repo"
@@ -30,7 +30,7 @@ import { browsers, links } from '~/data/content';
     </div>
 
     <p class="text-muted-foreground mt-5 text-sm">
-      Gratuito, de código aberto e sem conta. Ainda não está nas lojas: a instalação é pelo GitHub.
+      Gratuito, de código aberto e sem conta. Está na Chrome Web Store; no Firefox, a instalação ainda é pelo GitHub.
     </p>
 
     <ul class="text-muted-foreground mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">

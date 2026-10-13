@@ -8,16 +8,22 @@ import { links } from '~/data/content';
       <h2 class="text-2xl leading-snug font-semibold tracking-tight sm:text-3xl">Como instalar</h2>
       <div class="text-lg leading-relaxed">
         <p>
-          O Pixima ainda não está na Chrome Web Store nem no Firefox Add-ons, então por enquanto a instalação é manual,
-          a partir do código no GitHub. Leva alguns minutos, e o passo a passo está no README.
+          No Chrome, no Edge e no Brave, abra a página do Pixima na Chrome Web Store e clique em Adicionar. O Edge e o
+          Brave também instalam extensões dessa loja.
         </p>
-        <p class="text-muted-foreground mt-4">Quando ele estiver nas lojas, os links aparecem aqui.</p>
         <a
-          :href="links.install"
+          :href="links.chromeStore"
           class="bg-primary text-primary-foreground mt-6 inline-block rounded-md px-5 py-3 text-[15px] font-medium transition hover:brightness-110"
         >
-          Ver o passo a passo
+          Abrir na Chrome Web Store
         </a>
+        <p class="text-muted-foreground mt-10">
+          No Firefox, o Pixima ainda não está no Firefox Add-ons. Por enquanto a instalação é manual, a partir do código
+          no GitHub, e o passo a passo está no README.
+        </p>
+        <p class="mt-3">
+          <a :href="links.installManual" class="text-primary underline underline-offset-4">Ver o passo a passo para o Firefox</a>
+        </p>
       </div>
     </div>
   </section>
